@@ -11,16 +11,24 @@ body { font-family: sans-serif; background-color: var(--bg-main); color: var(--t
 .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
 header { background: #0f172a; padding: 2.5rem 0; text-align: center; border-bottom: 1px solid var(--border-color); }
 header h1 { font-size: 2.5rem; color: var(--accent-blue); }
-.subtitle { color: var(--text-muted); margin-bottom: 1rem; }
-.contact-info { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
+.subtitle { color: var(--text-muted); margin-bottom: 1rem; font-size: 1.1rem; }
+.contact-info { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
 .contact-info a { color: var(--accent-blue); text-decoration: none; }
-.habilitations { font-size: 0.9rem; color: var(--text-muted); background: rgba(56, 189, 248, 0.1); display: inline-block; padding: 0.4rem 1rem; border-radius: 20px; }
+.habilitations { font-size: 0.9rem; color: var(--text-muted); background: rgba(56, 189, 248, 0.1); display: inline-block; padding: 0.4rem 1rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.2); }
+.print-btn { background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); border: 1px solid var(--accent-blue); padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; transition: 0.2s; }
+.print-btn:hover { background: var(--accent-blue); color: #0b0f19; }
+
 main { margin-top: 2rem; padding-bottom: 3rem; }
-.card, .sub-card { background: var(--bg-card); padding: 2nd; margin-bottom: 1.5rem; border-radius: 10px; border: 1px solid var(--border-color); }
-.card { padding: 2rem; }
-h2 { color: var(--accent-blue); margin-bottom: 1.2rem; font-size: 1.4rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
+.card { background: var(--bg-card); padding: 2rem; margin-bottom: 1.5rem; border-radius: 10px; border: 1px solid var(--border-color); }
+h2 { color: var(--accent-blue); margin-bottom: 1.2rem; font-size: 1.3rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.stat-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 1.2rem; border-radius: 8px; text-align: center; }
+.stat-number { display: block; font-size: 1.5rem; font-weight: bold; color: var(--accent-blue); margin-bottom: 0.3rem; }
+.stat-label { font-size: 0.85rem; color: var(--text-muted); }
+
 .terminal-card { background: #020617; border-radius: 8px; border: 1px solid #334155; margin-bottom: 1.5rem; overflow: hidden; font-family: monospace; }
-.terminal-header { background: #0f172a; padding: 0.75rem 1rem; display: flex; gap: 0.5rem; border-bottom: 1px solid #1e293b; }
+.terminal-header { background: #0f172a; padding: 0.75rem 1rem; display: flex; gap: 0.5rem; border-bottom: 1px solid #1e293b; align-items: center; }
 .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
 .dot.red { background: #ef4444; } .dot.yellow { background: #f59e0b; } .dot.green { background: #22c55e; }
 .terminal-title { font-size: 0.85rem; color: var(--text-muted); margin-left: 0.5rem; }
@@ -28,13 +36,19 @@ h2 { color: var(--accent-blue); margin-bottom: 1.2rem; font-size: 1.4rem; border
 .terminal-body p { margin-bottom: 0.5rem; }
 .prompt { color: var(--accent-blue); font-weight: bold; }
 .status-ok { color: #4ade80; font-weight: bold; }
+
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
-.sub-card { padding: 1.2rem; }
+.sub-card { background: rgba(15, 23, 42, 0.6); padding: 1.2rem; border-radius: 8px; border: 1px solid var(--border-color); }
 .sub-card h3 { font-size: 1rem; color: var(--text-main); margin-bottom: 0.5rem; }
 .sub-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
-.tag { font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 4px; font-family: monospace; }
-.tag.green { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
-.tag.blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+.tag { font-size: 0.75rem; padding: 0.3rem 0.6rem; border-radius: 4px; font-family: monospace; display: inline-block; }
+.tag.green { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
+.tag.blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+
+.skill-list { list-style-type: none; padding-left: 0; }
+.skill-list li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative; }
+.skill-list li::before { content: '▪'; position: absolute; left: 0; color: var(--accent-blue); }
+
 .timeline { border-left: 2px solid var(--border-color); padding-left: 1.5rem; margin-left: 0.5rem; }
 .job { position: relative; margin-bottom: 1.5rem; }
 .job::before { content: ''; position: absolute; left: -1.75rem; top: 0.3rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-blue); }
@@ -42,4 +56,19 @@ h2 { color: var(--accent-blue); margin-bottom: 1.2rem; font-size: 1.4rem; border
 .job h3 { font-size: 1.1rem; color: var(--text-main); }
 .job .date { font-size: 0.85rem; color: var(--accent-blue); font-weight: 500; }
 .job p { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.3rem; }
+
+.contact-form .form-group { margin-bottom: 1rem; }
+.contact-form label { display: block; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 0.75rem; background: #0f172a; border: 1px solid var(--border-color); color: var(--text-main); border-radius: 6px; font-size: 0.95rem; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent-blue); }
+.submit-btn { background: var(--accent-blue); color: #0b0f19; border: none; padding: 0.75rem 1.5rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.2s; }
+.submit-btn:hover { background: #38bdf8dd; }
+
 footer { text-align: center; padding: 2rem 0; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); }
+
+@media print {
+    body { background: #ffffff !important; color: #000000 !important; }
+    .card, .sub-card, header, .stat-card, .terminal-card { background: #ffffff !important; border: 1px solid #ccc !important; color: #000000 !important; box-shadow: none !important; }
+    h1, h2, h3, .subtitle, .stat-number, .job .date, .prompt { color: #000000 !important; }
+    .print-btn, .contact-form { display: none !important; }
+}
